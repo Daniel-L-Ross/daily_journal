@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import "./header.css";
+@import "./footer.css";
+@import "./journal_form.css";
+@import "./journalcontainer.css";
+@import "./journalentry.css";
 
 /*Typography
 --------------------------------------------------------------*/
