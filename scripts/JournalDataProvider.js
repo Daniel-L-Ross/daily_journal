@@ -22,10 +22,11 @@ const journal = [
     }
 ]
 
-export const useJournalEntries = () => {
+export const UseJournalEntries = () => {
     const sortedByDate = journal.sort(
         (curretEntry, nextEntry) =>
             Date.parse(curretEntry.date) - Date.parse(nextEntry.date)
     )
     return sortedByDate
 }
+
