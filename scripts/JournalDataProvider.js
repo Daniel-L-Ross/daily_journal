@@ -25,7 +25,7 @@ const journal = [
 export const UseJournalEntries = () => {
     const sortedByDate = journal.sort(
         (curretEntry, nextEntry) =>
-            Date.parse(curretEntry.date) - Date.parse(nextEntry.date)
+            Date.parse(nextEntry.date) - Date.parse(curretEntry.date)
     )
     return sortedByDate
 }
