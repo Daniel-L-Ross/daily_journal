@@ -13,7 +13,7 @@ export const EntryListComponent = () => {
             }
 
             entryLog.innerHTML += `
-        <section class="contentContainer">
+        <section class="entryContainer">
             ${entryHTML}
         </section>
     `

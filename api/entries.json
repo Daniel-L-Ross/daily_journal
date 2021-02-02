@@ -27,6 +27,13 @@
       "entry": "Test",
       "mood": "happy",
       "id": 4
+    },
+    {
+      "date": "2020-02-02",
+      "concept": "GIT",
+      "entry": "Tried git merge to update this branch.",
+      "mood": "nervous",
+      "id": 5
     }
   ]
 }
