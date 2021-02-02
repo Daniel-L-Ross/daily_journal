@@ -43,7 +43,6 @@ export const JournalEntryForm = () => {
 eventHub.addEventListener("click", clickEvent => {
     clickEvent.preventDefault()
     if (clickEvent.target.id === "postEntry") {
-        debugger
         const newEntry = {
             date: document.querySelector('#journalDate').value,
             concept: document.querySelector('#conceptsCovered').value,

@@ -1,5 +1,7 @@
 let journal = []
 
+const eventHub = document.querySelector(".container")
+
 export const UseJournalEntries = () => {
     const journalCopy = journal.slice()
     const sortedByDate = journalCopy.sort(
@@ -7,6 +9,11 @@ export const UseJournalEntries = () => {
             Date.parse(nextEntry.date) - Date.parse(curretEntry.date)
     )
     return sortedByDate
+}
+
+const dispatchStateChangeEvent = () => {
+    const entriesChangedEvent = new CustomEvent("entryStateChanged")
+    eventHub.dispatchEvent(entriesChangedEvent)
 }
 
 export const getEntries = () => {
@@ -28,4 +35,6 @@ export const getEntries = () => {
         },
         body: JSON.stringify(entryObject)
     })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
 }

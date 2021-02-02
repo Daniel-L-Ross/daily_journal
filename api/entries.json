@@ -34,6 +34,27 @@
       "entry": "Tried git merge to update this branch.",
       "mood": "nervous",
       "id": 5
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "happy",
+      "id": 6
+    },
+    {
+      "date": "",
+      "concept": "",
+      "entry": "",
+      "mood": "happy",
+      "id": 7
+    },
+    {
+      "date": "2021-02-01",
+      "concept": "Group Communication",
+      "entry": "Test",
+      "mood": "relaxed",
+      "id": 8
     }
   ]
 }
