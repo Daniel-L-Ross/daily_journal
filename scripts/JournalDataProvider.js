@@ -1,32 +1,31 @@
-const journal = [
-    {
-        id: 1,
-        date: "01/05/2021",
-        concept: "HTML & CSS",
-        entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        mood: "Excited",
-    },
-    {
-        id: 2,
-        date: "01/06/2021",
-        concept: "Terminal Basics",
-        entry: "Today we went over commands in the terminal. We discussed some syntax as well as the most important commands to know,",
-        mood: "Content",
-    },
-    {
-        id: 3,
-        date: "01/07/2021",
-        concept: "Git & Github",
-        entry: "We covered git commands in the terminal as well as the high-level github workflow.",
-        mood: "Confused",
-    }
-]
+let journal = []
 
 export const UseJournalEntries = () => {
-    const sortedByDate = journal.sort(
+    const journalCopy = journal.slice()
+    const sortedByDate = journalCopy.sort(
         (curretEntry, nextEntry) =>
             Date.parse(nextEntry.date) - Date.parse(curretEntry.date)
     )
     return sortedByDate
 }
 
+export const getEntries = () => {
+    return fetch("http://localhost:8088/entries")
+    .then(response => response.json())
+    .then(
+        parsedEntries => {
+            console.table(parsedEntries)
+            journal = parsedEntries
+        }
+        )
+    }
+    
+    export const saveEntry = (entryObject) => {
+    return fetch("http://localhost:8088/entries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entryObject)
+    })
+}
