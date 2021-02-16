@@ -19,10 +19,9 @@ eventHub.addEventListener("click", clickEvent => {
         const [prefix, id] = clickEvent.target.id.split("--")
         const deleteEntryClicked = new CustomEvent("deleteEntry", {
             detail: {
-                entryId: id
+                entryId: parseInt(id)
             }
         })
         eventHub.dispatchEvent(deleteEntryClicked)
-        console.log("delete clicked")
     }
 })

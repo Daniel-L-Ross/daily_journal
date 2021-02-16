@@ -44,6 +44,19 @@ export const saveEntry = (entryObject) => {
     .then(dispatchStateChangeEvent)
 }
 
+const deleteEntry = (entryId) => {
+    return fetch(`http://localhost:8088/entries/${entryId}`, {
+        method: "DELETE"
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
+
+eventHub.addEventListener("deleteEntry", deleteEvent => {
+    const id = deleteEvent.detail.entryId
+    deleteEntry(id)
+})
+
 export const getMoods = () => {
     return fetch("http://localhost:8088/moods")
         .then(response => response.json())

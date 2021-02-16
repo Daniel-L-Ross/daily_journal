@@ -49,7 +49,6 @@ eventHub.addEventListener("click", clickEvent => {
             entry: document.querySelector('#journalEntry').value,
             moodId: parseInt(document.querySelector('#mood').value)
         }
-        debugger
         if (newEntry.date === "") {
             alert("Please fill in the date before saving an entry.")
         } else if (newEntry.concept === "" || newEntry.concept.length > 25) {
