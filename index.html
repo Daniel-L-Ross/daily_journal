@@ -9,26 +9,38 @@
 
 <body>
     <main class="container">
-    <header class="pageHeader">
-        <div class="header__container">
-            <img src="" alt="">
-            <div class="headerDescription"><h1>A blog by Dan Ross about his coding journey.</h1></div>
-        </div>
-    </header>
-<section class="formWrapper">
-</section>
-<section class="entryContainer"></section>
-</section>
-    <footer class="pageFooter">
-        <div class="footer__container">
-            <div class="footer__container-copyright"> Copyright Dan Ross, 2021</div>
-            <div class="footer__container-social">
-                <div class="socialDescription">Check out my code on github:</div>
-                <div class="socialLink"><a href="https://github.com/Daniel-L-Ross"></a>github.com</div>
+        <header class="pageHeader">
+            <div class="header__container">
+                <img src="" alt="">
+                <div class="headerDescription">
+                    <h1>A blog by Dan Ross about his coding journey.</h1>
+                </div>
             </div>
-        </div>
-    </footer>
-</main>
+        </header>
+        <section class="formWrapper"></section>
+        <section class="moodWrapper">
+            <form action="">
+                <fieldset>
+                    <legend>Filter Journal Entries by Mood</legend>
+                    <input type="radio" name="moodFilter" value="happy" checked>
+                    <label for="moodFilter--happy">Happy</label>
+                    <input type="radio" name="moodFilter" value="excited">
+                    <label for="moodFilter--excited">Excited</label>
+                </fieldset>
+            </form>
+        </section>
+        <section class="entryContainer"></section>
+        </section>
+        <footer class="pageFooter">
+            <div class="footer__container">
+                <div class="footer__container-copyright"> Copyright Dan Ross, 2021</div>
+                <div class="footer__container-social">
+                    <div class="socialDescription">Check out my code on github:</div>
+                    <div class="socialLink"><a href="https://github.com/Daniel-L-Ross"></a>github.com</div>
+                </div>
+            </div>
+        </footer>
+    </main>
     <script type="module" src="./scripts/main.js"></script>
 </body>
 
