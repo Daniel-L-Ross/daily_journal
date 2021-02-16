@@ -6,6 +6,13 @@
       "entry": "Testing mood id",
       "moodId": 5,
       "id": 1
+    },
+    {
+      "date": "2021-02-16",
+      "concept": "Deleting notes",
+      "entry": "Use a fetch call",
+      "moodId": 3,
+      "id": 2
     }
   ],
   "moods": [
