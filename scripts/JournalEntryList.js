@@ -1,21 +1,25 @@
 import { UseJournalEntries, getEntries } from './JournalDataProvider.js'
 import { JournalEntryComponent } from './JournalEntry.js'
 
+const eventHub = document.querySelector(".container")
+const entryLog = document.querySelector(".entryContainer")
 
 export const EntryListComponent = () => {
     getEntries()
         .then(() => {
             const entries = UseJournalEntries()
-            const entryLog = document.querySelector('.container')
             let entryHTML = ""
             for (const entry of entries) {
                 entryHTML += JournalEntryComponent(entry)
             }
-
-            entryLog.innerHTML += `
-        <section class="entryContainer">
+            entryLog.innerHTML = `
+           <h2>Entries</h2>
             ${entryHTML}
-        </section>
-    `
+            `
         })
 }
+
+eventHub.addEventListener("entryStateChanged", event => {
+    getEntries()
+    .then(EntryListComponent)
+})
