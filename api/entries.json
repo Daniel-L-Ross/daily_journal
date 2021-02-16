@@ -36,46 +36,32 @@
       "id": 5
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "happy",
+      "date": "2021-02-21",
+      "concept": "Testing code",
+      "entry": "Entry goes here",
+      "mood": "0",
       "id": 6
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "happy",
+      "date": "2021-02-16",
+      "concept": "Testing code again",
+      "entry": "Another entry.",
+      "mood": "0",
       "id": 7
     },
     {
-      "date": "2021-02-01",
-      "concept": "Group Communication",
-      "entry": "Test",
-      "mood": "relaxed",
+      "date": "2021-02-15",
+      "concept": "None",
+      "entry": "test",
+      "mood": "calm",
       "id": 8
     },
     {
-      "date": "2021-02-16",
-      "concept": "Api calls",
-      "entry": "Lorem ipsem doler set",
-      "mood": "content",
+      "date": "2021-02-15",
+      "concept": "None",
+      "entry": "test",
+      "mood": "calm",
       "id": 9
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "happy",
-      "id": 10
-    },
-    {
-      "date": "2021-02-16",
-      "concept": "Event Listeners",
-      "entry": "More tests",
-      "mood": "relaxed",
-      "id": 11
     }
   ]
 }

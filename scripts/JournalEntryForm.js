@@ -23,6 +23,7 @@ export const JournalEntryForm = () => {
         <fieldset>
             <label for="mood">Mood for the Day</label>
             <select name="mood" id="mood">
+                <option value="0">Please select a mood...</option>
                 <option value="happy">Happy</option>
                 <option value="excited">Excited</option>
                 <option value="calm">Calm</option>
@@ -49,6 +50,19 @@ eventHub.addEventListener("click", clickEvent => {
             entry: document.querySelector('#journalEntry').value,
             mood: document.querySelector('#mood').value
         }
-        saveEntry(newEntry)
+        debugger
+        if (newEntry.date === "") {
+            alert("Please fill in the date before saving an entry.")
+        } else if (newEntry.concept === "" || newEntry.concept.length > 25) {
+            alert("You must enter a concept before saving. Please limit the description to 25 characters or less.")
+        } else if (newEntry.entry === "" || newEntry.entry.length > 200) {
+            alert("You must add an entry before saving. Please limit the entry to 200 characters or less.")
+        } else if (parseInt(newEntry.mood) === 0) {
+            alert("Please select a mood before saving an entry.")
+        }
+        if (newEntry.date !== "" && newEntry.concept.length > 0 && newEntry.concept.length < 25 && newEntry.entry.length > 0 && newEntry.entry.length < 200 && parseInt(newEntry.mood) !== 0) {
+
+            saveEntry(newEntry)
+        }
     }
 })
