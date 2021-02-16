@@ -1,67 +1,42 @@
 {
   "entries": [
+  ],
+  "moods": [
     {
       "id": 1,
-      "date": "01/05/2021",
-      "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "mood": "Excited"
+      "label": "Happy"
     },
     {
       "id": 2,
-      "date": "01/06/2021",
-      "concept": "Terminal Basics",
-      "entry": "Today we went over commands in the terminal. We discussed some syntax as well as the most important commands to know,",
-      "mood": "Content"
+      "label": "Excited"
     },
     {
       "id": 3,
-      "date": "01/07/2021",
-      "concept": "Git & Github",
-      "entry": "We covered git commands in the terminal as well as the high-level github workflow.",
-      "mood": "Confused"
+      "label": "Calm"
     },
     {
-      "date": "2021-02-01",
-      "concept": "None",
-      "entry": "Test",
-      "mood": "happy",
-      "id": 4
+      "id": 4,
+      "label": "Content"
     },
     {
-      "date": "2020-02-02",
-      "concept": "GIT",
-      "entry": "Tried git merge to update this branch.",
-      "mood": "nervous",
-      "id": 5
+      "id": 5,
+      "label": "Relaxed"
     },
     {
-      "date": "2021-02-21",
-      "concept": "Testing code",
-      "entry": "Entry goes here",
-      "mood": "0",
-      "id": 6
+      "id": 6,
+      "label": "Sad"
     },
     {
-      "date": "2021-02-16",
-      "concept": "Testing code again",
-      "entry": "Another entry.",
-      "mood": "0",
-      "id": 7
+      "id": 7,
+      "label": "Nervous"
     },
     {
-      "date": "2021-02-15",
-      "concept": "None",
-      "entry": "test",
-      "mood": "calm",
-      "id": 8
+      "id": 8,
+      "label": "Upset"
     },
     {
-      "date": "2021-02-15",
-      "concept": "None",
-      "entry": "test",
-      "mood": "calm",
-      "id": 9
+      "id": 9,
+      "label": "Tense"
     }
   ]
 }
