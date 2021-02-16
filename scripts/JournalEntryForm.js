@@ -2,7 +2,7 @@ import { saveEntry } from "./JournalDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 
-const contentElement = document.querySelector(".contentContainer")
+const contentElement = document.querySelector(".formWrapper")
 
 export const JournalEntryForm = () => {
     contentElement.innerHTML = `

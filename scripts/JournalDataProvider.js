@@ -21,7 +21,6 @@ export const getEntries = () => {
     .then(response => response.json())
     .then(
         parsedEntries => {
-            console.table(parsedEntries)
             journal = parsedEntries
         }
         )
