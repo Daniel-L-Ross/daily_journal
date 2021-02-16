@@ -1,3 +1,5 @@
+const eventHub = document.querySelector('.container')
+
 export const JournalEntryComponent = (post) => {
     return `
     <article id="entry--${post.id}"class="journalEntry">
@@ -7,6 +9,20 @@ export const JournalEntryComponent = (post) => {
             <div class="postMood">Mood: ${post.mood.label}</div>
         </div>
         <div class="postContent">${post.entry}</div>
+        <button id="deleteEntry--${post.id}">Delete</button>
     </article>
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        const deleteEntryClicked = new CustomEvent("deleteEntry", {
+            detail: {
+                entryId: id
+            }
+        })
+        eventHub.dispatchEvent(deleteEntryClicked)
+        console.log("delete clicked")
+    }
+})
