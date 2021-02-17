@@ -5,13 +5,13 @@ export const useEntryTags = () => {
 }
 
 export const getEntryTags = () => {
-    fetch("http://localhost:8088/entrytags")
-    .then(response => response.json())
-    .then(
-        parsedEntryTags => {
-            entryTags = parsedEntryTags
-        }
-    )
+    return fetch("http://localhost:8088/entrytags")
+        .then(response => response.json())
+        .then(
+            parsedEntryTags => {
+                entryTags = parsedEntryTags
+            }
+        )
 }
 
 // pass in the two foreign keys to create a new entryTag
