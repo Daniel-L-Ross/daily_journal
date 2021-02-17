@@ -17,8 +17,10 @@ const render = moods => {
     <form action="">
     <fieldset class="moodFilter__options">
     <legend>Filter Journal Entries by Mood</legend>
-    <input type="radio" name="moodFilter" value="1" checked>
-    <label for="moodFilter--happy">Happy</label>
+    ${moods.map(mood => 
+        `<input type="radio" name="moodFilter" value="${mood.id}">
+        <label for="moodFilter--${mood.label}">${mood.label}</label>`
+        )}
     <input type="radio" name="moodFilter" value="2">
     <label for="moodFilter--excited">Excited</label>
     </fieldset>
