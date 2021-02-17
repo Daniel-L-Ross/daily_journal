@@ -12,20 +12,20 @@ export const JournalEntryForm = () => {
 
             contentElement.innerHTML = `
         <section class="formContainer">
-        <form action="">
-        <fieldset>
+        <form action="" class="journalForm">
+        <fieldset class="entry__field">
         <label for="journalDate">Date of Entry</label>
         <input type="date" name="journalDate" id="journalDate" class="formOption">
         </fieldset>
-        <fieldset>
+        <fieldset class="entry__field">
         <label for="conceptsCovered">Concepts Covered</label>
         <input type="text" name="conceptsCovered" id="conceptsCovered" class="formOption">
         </fieldset>
-        <fieldset>
+        <fieldset class="entry__field">
         <label for="journalEntry">Journal Entry</label>
         <textarea type="textarea" name="journalEntry" id="journalEntry" class="formOption"></textarea>
         </fieldset>
-        <fieldset>
+        <fieldset class="entry__field">
         <label for="mood">Mood for the Day</label>
         <select name="mood" id="mood">
         <option value="0">Please select a mood...</option>
@@ -41,8 +41,8 @@ export const JournalEntryForm = () => {
 }
 
 eventHub.addEventListener("click", clickEvent => {
-    clickEvent.preventDefault()
     if (clickEvent.target.id === "postEntry") {
+        clickEvent.preventDefault()
         const newEntry = {
             date: document.querySelector('#journalDate').value,
             concept: document.querySelector('#conceptsCovered').value,

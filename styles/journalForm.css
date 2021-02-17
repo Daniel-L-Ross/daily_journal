@@ -1,10 +1,10 @@
-fieldset {
+.entry__field {
     display: flex;
     flex-direction: column;
     border: 0px
 }
 
-form {
+.journalForm {
     width: 50%;
     margin: 0 auto;
 }
