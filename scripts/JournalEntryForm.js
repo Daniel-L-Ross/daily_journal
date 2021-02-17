@@ -9,32 +9,32 @@ export const JournalEntryForm = () => {
             const moods = useMoods()
             contentElement.innerHTML = `
         <section class="formContainer">
-        <form action="" class="journalForm">
-        <fieldset class="entry__field">
-        <label for="journalDate">Date of Entry</label>
-        <input type="date" name="journalDate" id="journalDate" class="formOption">
-        </fieldset>
-        <fieldset class="entry__field">
-        <label for="conceptsCovered">Concepts Covered</label>
-        <input type="text" name="conceptsCovered" id="conceptsCovered" class="formOption">
-        </fieldset>
-        <fieldset class="entry__field">
-        <label for="journalEntry">Journal Entry</label>
-        <textarea type="textarea" name="journalEntry" id="journalEntry" class="formOption"></textarea>
-        </fieldset>
-        <fieldset class="entry__field">
-        <label for="mood">Mood for the Day</label>
-        <select name="mood" id="mood">
-        <option value="0">Please select a mood...</option>
-            ${moods.map(mood =>`<option value="${mood.id}">${mood.label}</option>`).join("")}
-        </select>
-        </fieldset>
-        <fieldset class="entry__field">
-        <label for="tags">Tags - Please seperate by comma without spaces. Example: FETCH,JSON,Promises</label>
-        <input type="text" name="tags" id="tags" class="formOption">
-        </fieldset>
-        <button class="button postEntry__button" id="postEntry">Post Entry</button>
-        </form>
+            <form action="" class="journalForm">
+                <fieldset class="entry__field">
+                    <label for="journalDate">Date of Entry</label>
+                    <input type="date" name="journalDate" id="journalDate" class="formOption">
+                </fieldset>
+                <fieldset class="entry__field">
+                    <label for="conceptsCovered">Concepts Covered</label>
+                    <input type="text" name="conceptsCovered" id="conceptsCovered" class="formOption">
+                </fieldset>
+                <fieldset class="entry__field">
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea type="textarea" name="journalEntry" id="journalEntry" class="formOption"></textarea>
+                </fieldset>
+                <fieldset class="entry__field">
+                    <label for="mood">Mood for the Day</label>
+                    <select name="mood" id="mood">
+                    <option value="0">Please select a mood...</option>
+                        ${moods.map(mood =>`<option value="${mood.id}">${mood.label}</option>`).join("")}
+                </select>
+                </fieldset>
+                <fieldset class="entry__field">
+                    <label for="tags">Tags - Please seperate by comma without spaces. Example: FETCH,JSON,Promises</label>
+                    <input type="text" name="tags" id="tags" class="formOption">
+                </fieldset>
+                <button class="button postEntry__button" id="postEntry">Post Entry</button>
+            </form>
         </section>
         `
         })

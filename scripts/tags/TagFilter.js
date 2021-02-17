@@ -4,12 +4,6 @@ import { findTag, saveTag } from "./TagProvider.js"
 const eventHub = document.querySelector('.container')
 
 export const saveTagEntry = (entryTags) => {
-
-}
-
-eventHub.addEventListener('tagEvent', customEvent => {
-    const entryTags = customEvent.detail.tags 
-
     entryTags.map(tag => {
         findTag(tag)
         .then(matches => {
@@ -18,7 +12,7 @@ eventHub.addEventListener('tagEvent', customEvent => {
             if (matches.length > 0) {
                 matchingTag = matches[0].id
             }
-
+    
             if (matchingTag === null) {
                 console.log("matchingTag was null")
                 saveTag(tag)
@@ -32,4 +26,8 @@ eventHub.addEventListener('tagEvent', customEvent => {
         })
     })
 
-}) 
+}
+
+// eventHub.addEventListener('tagEvent', customEvent => {
+//     const entryTags = customEvent.detail.tags 
+// }) 
