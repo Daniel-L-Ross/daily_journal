@@ -1,11 +1,14 @@
 import { UseJournalEntries, getEntries } from './JournalDataProvider.js'
 import { JournalEntryComponent } from './JournalEntry.js'
+import { getTags } from './tags/TagProvider.js'
 
 const eventHub = document.querySelector(".container")
 const entryLog = document.querySelector(".entryContainer")
 
 export const EntryListComponent = () => {
     getEntries()
+    .then(getTags)
+    .then()
         .then(() => {
             const entries = UseJournalEntries()
                     // ADD ADITIONAL PARAMETERS
@@ -17,10 +20,14 @@ export const EntryListComponent = () => {
 
 const render = (entries, allEntryTags, allTags => {
     const entryHTML = entries.map(entryObject => {
+        const relatedEntryTags = allEntryTags.filter(entryTag => entryObject.id === entryTag.entryId)
         
-        
-        JournalEntryComponent(entryObject, tags)
-        
+        const tags = relatedEntryTags.map(entryTag => {
+            const matchingTags = allTags.find(tag => tag.id === entryTag.tagId)
+            return matchingTags
+        })
+
+        return JournalEntryComponent(entryObject, tags)
     })
 
     entryLog.innerHTML = `
