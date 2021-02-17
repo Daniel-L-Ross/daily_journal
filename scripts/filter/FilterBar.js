@@ -19,7 +19,7 @@ export const filterBar = () => {
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.name === "moodFilter") {
         const moodId = parseInt(changeEvent.target.value)
-        const moodSelected = new CustomEvent("moodChosen", {
+        const moodSelected = new CustomEvent("moodFilterChosen", {
             detail: {
                 moodId: moodId
             }
