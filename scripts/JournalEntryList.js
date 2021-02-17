@@ -8,27 +8,33 @@ export const EntryListComponent = () => {
     getEntries()
         .then(() => {
             const entries = UseJournalEntries()
+                    // ADD ADITIONAL PARAMETERS
+
             render(entries)
         })
 }
 
 
-const render = entries => {
-    let entryHTML = ""
-    for (const entry of entries) {
-        entryHTML += JournalEntryComponent(entry)
-    }
+const render = (entries, allEntryTags, allTags => {
+    const entryHTML = entries.map(entryObject => {
+        
+        
+        JournalEntryComponent(entryObject, tags)
+        
+    })
+
     entryLog.innerHTML = `
     <h2>Entries</h2>
     ${entryHTML}
     `
-}
+})
 
 // display current notes on stateChange
 eventHub.addEventListener("entryStateChanged", event => {
     getEntries()
         .then(() => {
             const entries = UseJournalEntries()
+        // ADD ADITIONAL PARAMETERS
             render(entries)
         })
 })
@@ -46,6 +52,7 @@ const filterEntries = moodId => {
             const allEntries = UseJournalEntries()
             const entries = allEntries.filter(entry => entry.moodId === moodId)
             if (entries.length > 0) {
+                // ADD ADITIONAL PARAMETERS
                 render(entries)
             } else {
                 entryLog.innerHTML = `

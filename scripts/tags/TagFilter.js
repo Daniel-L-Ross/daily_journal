@@ -1,7 +1,11 @@
-import { findTag } from "./TagProvider.js"
+import { saveEntryTag } from "./EntryTagProvider.js"
+import { findTag, saveTag } from "./TagProvider.js"
 
 const eventHub = document.querySelector('.container')
 
+export const saveTagEntry = (entryTags) => {
+
+}
 
 eventHub.addEventListener('tagEvent', customEvent => {
     const entryTags = customEvent.detail.tags 
@@ -17,8 +21,13 @@ eventHub.addEventListener('tagEvent', customEvent => {
 
             if (matchingTag === null) {
                 console.log("matchingTag was null")
+                saveTag(tag)
+                    .then(new_tag => {
+                        saveEntryTag(entry.id, new_tag.id)
+                    })
             } else {
                 console.log("matchingtag = ", matchingTag)
+                saveEntryTag(entry.id, matchinTag)
             }
         })
     })

@@ -1,7 +1,7 @@
 // pass in the two foreign keys to create a new entryTag
-export const saveEntryTag = (entry.id, matchingTag) => {
+export const saveEntryTag = (entryId, matchingTag) => {
     const newEntryTag = {
-        entryId: entry.id,
+        entryId: entryId,
         tagId: matchingTag
     }
     fetch("http://localhost:8088/entrytags", {
