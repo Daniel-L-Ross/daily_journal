@@ -30,7 +30,7 @@ export const JournalEntryForm = () => {
         </select>
         </fieldset>
         <fieldset class="entry__field">
-        <label for="tags">Tags - Please seperate by comma </label>
+        <label for="tags">Tags - Please seperate by comma without spaces. Example: FETCH,JSON,Promises</label>
         <input type="text" name="tags" id="tags" class="formOption">
         </fieldset>
         <button class="button postEntry__button" id="postEntry">Post Entry</button>
