@@ -146,6 +146,20 @@
       "entry": "What fun!",
       "moodId": 3,
       "id": 21
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "None",
+      "entry": "test",
+      "moodId": 1,
+      "id": 22
+    },
+    {
+      "date": "2021-02-17",
+      "concept": "Functions",
+      "entry": "Test",
+      "moodId": 1,
+      "id": 23
     }
   ],
   "moods": [
@@ -208,7 +222,5 @@
       "subject": "soft-skills"
     }
   ],
-  "entrytags":[
-
-  ]
+  "entrytags": []
 }
