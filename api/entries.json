@@ -189,5 +189,26 @@
       "id": 10,
       "label": "Whelmed"
     }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "subject": "API"
+    },
+    {
+      "id": 2,
+      "subject": "components"
+    },
+    {
+      "id": 3,
+      "subject": "fetch"
+    },
+    {
+      "id": 4,
+      "subject": "soft-skills"
+    }
+  ],
+  "entrytags":[
+
   ]
 }
