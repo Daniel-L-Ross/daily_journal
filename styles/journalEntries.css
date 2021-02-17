@@ -3,8 +3,9 @@
 } */
 
 .journalEntry {
-    background-color: rgb(125, 125, 125);
+    background-color: rgb(103, 241, 207);
     margin: 1em;
+    padding: .5em;
 }
 
 .postHeader {

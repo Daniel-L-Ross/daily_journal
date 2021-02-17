@@ -19,6 +19,11 @@ export const EntryListComponent = () => {
         })
 }
 
+const render = entries => {
+    // #1 refactor EntryListComponent so it calls rener
+    // #2 add an event listener that calls render for the specific value of the mood selected
+}
+
 eventHub.addEventListener("entryStateChanged", event => {
     getEntries()
     .then(EntryListComponent)

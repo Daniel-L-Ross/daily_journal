@@ -139,6 +139,13 @@
       "entry": "text",
       "moodId": 2,
       "id": 20
+    },
+    {
+      "date": "2021-02-16",
+      "concept": "ERD",
+      "entry": "What fun!",
+      "moodId": 3,
+      "id": 21
     }
   ],
   "moods": [
