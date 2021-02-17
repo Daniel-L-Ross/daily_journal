@@ -27,7 +27,3 @@ export const saveTagEntry = (entryTags) => {
     })
 
 }
-
-// eventHub.addEventListener('tagEvent', customEvent => {
-//     const entryTags = customEvent.detail.tags 
-// }) 

@@ -52,13 +52,8 @@ eventHub.addEventListener("click", clickEvent => {
         }
 
         const tagsArray = document.querySelector('#tags').value.split(",")
+
         entryCheck(newEntry, tagsArray)
-        const tagsAdded = new CustomEvent("tagEvent", {
-            detail: {
-                tags: tagsArray
-            }
-        })
-        eventHub.dispatchEvent(tagsAdded)
     }
 })
 
@@ -77,14 +72,7 @@ const entryCheck = (newEntry, tagsArray) => {
     }
     if (newEntry.date !== "" && newEntry.concept.length > 0 && newEntry.concept.length < 25 && newEntry.entry.length > 0 && newEntry.entry.length < 200 && newEntry.moodId !== 0) {
         saveEntry(newEntry)
-        if (tagsArray.length > 0) {
-            const tagsAdded = new CustomEvent("tagEvent", {
-                detail: {
-                    tags: tagsArray
-                }
-            })
-            eventHub.dispatchEvent(tagsAdded)
-            // for tag of tagsArray findTag()
-        }
+        .then(
+        )
     }
 }
