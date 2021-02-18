@@ -16,6 +16,7 @@ export const getEntryTags = () => {
 
 // pass in the two foreign keys to create a new entryTag
 export const saveEntryTag = (entryId, matchingTag) => {
+    debugger
     const newEntryTag = {
         entryId: entryId,
         tagId: matchingTag

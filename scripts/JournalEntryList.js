@@ -20,6 +20,7 @@ export const EntryListComponent = () => {
 
 
 const render = (entries, allEntryTags, allTags) => {
+    debugger
     const entryHTML = entries.map(entryObject => {
         const relatedEntryTags = allEntryTags.filter(entryTag => entryObject.id === entryTag.entryId)
         const tags = relatedEntryTags.map(entryTag => {
@@ -38,10 +39,13 @@ const render = (entries, allEntryTags, allTags) => {
 // display current notes on stateChange
 eventHub.addEventListener("entryStateChanged", event => {
     getEntries()
+    .then(getTags)
+    .then(getEntryTags)
         .then(() => {
             const entries = UseJournalEntries()
-            // ADD ADITIONAL PARAMETERS
-            render(entries)
+            const tags = useTags()
+            const entryTags = useEntryTags()
+            render(entries, entryTags, tags)
         })
 })
 
@@ -54,12 +58,16 @@ eventHub.addEventListener("moodFilterChosen", event => {
 // filter entries against the moodId
 const filterEntries = moodId => {
     getEntries()
+    .then(getTags)
+    .then(getEntryTags)
         .then(() => {
             const allEntries = UseJournalEntries()
+            const tags = useTags()
+            const entryTags = useEntryTags()
             const entries = allEntries.filter(entry => entry.moodId === moodId)
             if (entries.length > 0) {
                 // ADD ADITIONAL PARAMETERS
-                render(entries)
+                render(entries, entryTags, tags)
             } else {
                 entryLog.innerHTML = `
                 <p> No entries found for selected mood.</p>`

@@ -40,16 +40,16 @@ export const saveEntry = (entryObject) => {
         },
         body: JSON.stringify(entryObject)
     })
-    .then(getEntries)
-    .then(dispatchStateChangeEvent)
+        .then(getEntries)
+        .then(dispatchStateChangeEvent)
 }
 
 const deleteEntry = (entryId) => {
     return fetch(`http://localhost:8088/entries/${entryId}`, {
         method: "DELETE"
     })
-    .then(getEntries)
-    .then(dispatchStateChangeEvent)
+        .then(getEntries)
+        .then(dispatchStateChangeEvent)
 }
 
 eventHub.addEventListener("deleteEntry", deleteEvent => {
@@ -65,4 +65,22 @@ export const getMoods = () => {
                 moods = parsedMoods
             }
         )
+}
+
+let greatestId = 0
+
+const latestEntry = () => {
+    getEntries()
+        .then(
+            journal.map(entry => {
+                if (entry.id > greatestId) {
+                    greatestId = entry.id
+                }
+            })
+        )
+}
+
+export const getLastEntryId = () => {
+    latestEntry()
+    return greatestId
 }
