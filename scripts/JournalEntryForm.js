@@ -1,4 +1,5 @@
 import { getMoods, saveEntry, useMoods } from "./JournalDataProvider.js"
+import { saveEntryTag } from "./tags/EntryTagProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector(".formWrapper")
@@ -72,7 +73,15 @@ const entryCheck = (newEntry, tagsArray) => {
     }
     if (newEntry.date !== "" && newEntry.concept.length > 0 && newEntry.concept.length < 25 && newEntry.entry.length > 0 && newEntry.entry.length < 200 && newEntry.moodId !== 0) {
         saveEntry(newEntry)
-        .then(
+        // there is an issue with the next line
+        .then(data => data.json())
+        .then( parsedData => {
+            debugger
+            // this is where i was working last
+
+            const entryId = parsedData.id
+            saveEntryTag(tagsArray, entryId)
+        }
         )
     }
 }

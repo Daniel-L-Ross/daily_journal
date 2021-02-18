@@ -3,7 +3,7 @@ import { findTag, saveTag } from "./TagProvider.js"
 
 const eventHub = document.querySelector('.container')
 
-export const saveTagEntry = (entryTags) => {
+export const saveTagEntry = (entryTags, entryId) => {
     entryTags.map(tag => {
         findTag(tag)
         .then(matches => {
@@ -17,11 +17,11 @@ export const saveTagEntry = (entryTags) => {
                 console.log("matchingTag was null")
                 saveTag(tag)
                     .then(new_tag => {
-                        saveEntryTag(entry.id, new_tag.id)
+                        saveEntryTag(entryId, new_tag.id)
                     })
             } else {
                 console.log("matchingtag = ", matchingTag)
-                saveEntryTag(entry.id, matchinTag)
+                saveEntryTag(entryId, matchinTag)
             }
         })
     })
